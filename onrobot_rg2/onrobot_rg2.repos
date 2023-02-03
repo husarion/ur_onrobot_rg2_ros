@@ -1,0 +1,9 @@
+repositories:
+  roboticsgroup-gazebo-plugins:
+    type: git
+    url: https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git
+    version: 509a32ea6accc58d03cebd9d670ae44635adc924
+  ur-msgs:
+    type: git
+    url: https://github.com/ros-industrial/ur_msgs.git
+    version: 7f73065036ea8acbf3a0551f480cc57493341f22

@@ -1,0 +1,8 @@
+while (not(get_standard_digital_out(0) ==   True  )):
+    sync()
+end
+
+rg_grip(get_standard_analog_out(0)*5000, 40.0, tool_index = 0, blocking = True, depth_comp = False, popupmsg = True)
+rg_payload_set(mass = 0.0, tool_index = 0, use_guard = True)
+
+set_standard_digital_out(0, False)
