@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   message_generation
   std_msgs
+  ur_msgs
 )
 
 add_service_files(
@@ -19,7 +20,10 @@ generate_messages(
 )
 
 catkin_package(
-  CATKIN_DEPENDS message_runtime std_msgs
+  CATKIN_DEPENDS 
+  message_runtime 
+  std_msgs 
+  ur_msgs
 )
 
 include_directories(
