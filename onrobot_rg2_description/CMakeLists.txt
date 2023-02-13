@@ -7,7 +7,6 @@ find_package(catkin REQUIRED)
 catkin_package()
 
 include_directories(
-  launch
   meshes
   urdf
   ${catkin_INCLUDE_DIRS}
