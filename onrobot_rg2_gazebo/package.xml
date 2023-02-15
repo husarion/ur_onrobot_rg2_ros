@@ -16,9 +16,9 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <depend>controller_manager</depend>
+  <depend>effort_controllers</depend>
   <depend>gazebo_ros</depend>
   <depend>gazebo_ros_control</depend>
-  <depend>effort_controllers</depend>
   <depend>joint_state_controller</depend>
   <depend>joint_state_publisher</depend>
   <depend>xacro</depend>
