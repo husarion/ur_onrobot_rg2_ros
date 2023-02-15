@@ -17,8 +17,7 @@
   </include>
 
   <param command="$(find xacro)/xacro $(find onrobot_rg2_description)/urdf/onrobot.urdf.xacro"
-    name="robot_description"
-  />
+    name="robot_description" />
 
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -model rg2 -param robot_description" />
