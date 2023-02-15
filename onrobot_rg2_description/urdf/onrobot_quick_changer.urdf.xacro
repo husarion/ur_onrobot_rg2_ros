@@ -15,29 +15,17 @@
       <collision>
         <origin xyz="0.0 0.0 0.015" rpy="${pi/2} ${pi} 0.0" />
         <geometry>
-          <mesh filename="file://$(find onrobot_rg2_description)/meshes/quick_changer.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="file://$(find onrobot_rg2_description)/meshes/quick_changer.stl" />
         </geometry>
       </collision>
 
       <visual>
         <origin xyz="0.0 0.0 0.015" rpy="${pi/2} ${pi} 0.0" />
         <geometry>
-          <mesh filename="file://$(find onrobot_rg2_description)/meshes/quick_changer.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="file://$(find onrobot_rg2_description)/meshes/quick_changer.dae" />
         </geometry>
       </visual>
-
-      <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-        <mass value="0.2" />
-        <inertia ixx="0.000702" ixy="0.000000" ixz="0.000000"
-          iyy="0.000401" iyz="-0.000001"
-          izz="0.000120" />
-      </inertial>
     </link>
-
-    <gazebo reference="quick_changer_link">
-      <material>Gazebo/Grey</material>
-    </gazebo>
 
   </xacro:macro>
 </robot>

@@ -84,7 +84,7 @@
       <child link="rg2_l_moment_arm_link" />
       <origin xyz="0.105 0.017 0.010" rpy="0.0 0.0 0.0" />
       <axis xyz="0.0 0.0 1.0" />
-      <limit velocity="3.14" effort="10.6" lower="${-0.45}" upper="${pi*0.5}" />
+      <limit velocity="3.14" effort="10.6" lower="${-0.45}" upper="${1.0}" />
       <dynamics damping="0.1" friction="0.0" />
       <implicitSpringDamper>True</implicitSpringDamper>
     </joint>
