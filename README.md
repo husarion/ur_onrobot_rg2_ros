@@ -1,5 +1,5 @@
 # ur_onrobot_rg2_ros
-ROS packages for onrobot rg2 gripper
+ROS packages for OnRobot RG2 gripper
 
 # Examples
 
