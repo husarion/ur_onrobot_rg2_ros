@@ -9,7 +9,7 @@ To run the ROS packages provided in this repository using a Docker configuration
 
 ### rg2_driver.py
 
-Interim proposal for Onrobot RG2 gripper ROS controller
+Interim proposal for OnRobot RG2 gripper ROS controller.
 
 #### Publishes
 
