@@ -17,7 +17,7 @@ OnRobot RG2 gripper MODBUS-based ROS controller.
 
 #### Services advertised
 
-- `rg2/set_gripper_width` [*onrobot_rg2_driver/GripperState*]: Adjust the width of the RG2 gripper within a range of 0-100 mm.
+- `rg2/set_gripper_width` [*onrobot_rg2_driver/GripperState*]: Adjust the width of the RG2 gripper within a range of 0-100 mm. Gripper force can be set in the range of 3 to 40 [N].
 
 #### Parameters
 
