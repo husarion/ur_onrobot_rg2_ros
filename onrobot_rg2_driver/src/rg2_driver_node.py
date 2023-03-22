@@ -25,7 +25,6 @@ class Rg2DriverNode:
         frame_id = rospy.get_param('~base_link_frame', 'rg2_base_link')
         joint_name = rospy.get_param('~gripper_joint_name', 'rg2_gripper_joint')
         self.service_call_timeout_sec = rospy.get_param('~service_call_timeout_sec', 10.0)
-        self._rg2_force_range = (3.0, 40.0)  # [N]
         self._lock = Lock()
 
         self._rg2_modbus = Rg2Modbus(ur_robot_ip)
