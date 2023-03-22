@@ -80,7 +80,7 @@ class Rg2DriverNode:
 
     def _wait_for_grip_completion(self, timeout: Duration) -> bool:
         start_time = rospy.Time.now()
-        rate = rospy.Rate(20)
+        rate = rospy.Rate(20.0)
 
         while not self._rg2_modbus.querry_rg_busy_flag():
             if rospy.Time.now() - start_time > timeout / 10.0:
