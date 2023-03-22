@@ -14,4 +14,11 @@
   <url type="bugtracker">https://github.com/husarion/ur_onrobot_rg2_ros/issues</url>
 
   <buildtool_depend>catkin</buildtool_depend>
+  
+  <depend>joint_state_publisher_gui</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz</depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+
 </package>
