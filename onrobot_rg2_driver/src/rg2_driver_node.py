@@ -83,7 +83,7 @@ class Rg2DriverNode:
         rate = rospy.Rate(20)
 
         while not self._rg2_modbus.querry_rg_busy_flag():
-            if rospy.Time.now() - start_time > timeout / 10:
+            if rospy.Time.now() - start_time > timeout / 10.0:
                 # The preset position of the gripper is the same as
                 # the actual position before the service was sent
                 return self._rg2_modbus.querry_grip_detected_flag()
