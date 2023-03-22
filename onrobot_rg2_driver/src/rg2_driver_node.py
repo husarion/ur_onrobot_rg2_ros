@@ -21,7 +21,7 @@ class Rg2DriverNode:
     def __init__(self) -> None:
         rospy.init_node("rg2_driver_node", anonymous=False)
 
-        ur_robot_ip = rospy.get_param('~ur_robot_ip', '10.42.0.49')
+        ur_robot_ip = rospy.get_param('~ur_robot_ip', '10.15.20.4')
         frame_id = rospy.get_param('~base_link_frame', 'rg2_base_link')
         joint_name = rospy.get_param('~gripper_joint_name', 'rg2_gripper_joint')
         self.service_call_timeout_sec = rospy.get_param('~service_call_timeout_sec', 10.0)
