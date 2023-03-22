@@ -1,4 +1,4 @@
-modbus_add_signal("10.42.0.49", 255, 19, 1, "watchdog_out")
+modbus_add_signal("10.15.20.4", 255, 19, 1, "watchdog_out")
 modbus_set_signal_update_frequency("joint_out", 500)
 
 state = False

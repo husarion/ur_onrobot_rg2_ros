@@ -1,18 +1,7 @@
 def husarion_ext_control():
   global _hidden_verificationVariable=0
-  step_count_71b1d2c9_bb8c_4f23_bfd3_bff9cfd96e17 = 0.0
-  thread Step_Counter_Thread_e218fc7c_af8b_4a61_bf38_8ac1b7062fb2():
-    while (True):
-      step_count_71b1d2c9_bb8c_4f23_bfd3_bff9cfd96e17 = step_count_71b1d2c9_bb8c_4f23_bfd3_bff9cfd96e17 + 1.0
-      sync()
-    end
-  end
-  run Step_Counter_Thread_e218fc7c_af8b_4a61_bf38_8ac1b7062fb2()
-  set_tool_communication(True, 1000000, 2, 1, 1.5, 3.5)
-  set_tool_output_mode(0)
-  set_tool_digital_output_mode(0, 1)
-  set_tool_digital_output_mode(1, 1)
-  set_tool_voltage(24)
+  set_tcp(p[0.001996317595879933,-0.03805892914801173,0.2137942292011179,0.0,-0.20943951023931953,0.0])
+  set_safety_mode_transition_hardness(1)
   set_standard_analog_input_domain(0, 1)
   set_standard_analog_input_domain(1, 1)
   set_tool_analog_input_domain(0, 1)
@@ -20,10 +9,13 @@ def husarion_ext_control():
   set_analog_outputdomain(0, 1)
   set_analog_outputdomain(1, 1)
   set_input_actions_to_default()
-  set_gravity([0.0, 0.0, 9.82])
-  set_safety_mode_transition_hardness(1)
-  set_tcp(p[0.001996317595879933,-0.03805892914801173,0.2137942292011179,0.0,-0.20943951023931953,0.0])
+  set_tool_communication(True, 1000000, 2, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(24)
   set_target_payload(1.130000, [0.000000, -0.024000, 0.029000], [0.001887, 0.001887, 0.001887, 0.000000, 0.000000, 0.000000])
+  set_gravity([0.0, 0.0, 9.82])
   global counter_global=193
   global var_global=0
   # begin: URCap Installation Node
@@ -1478,16 +1470,24 @@ def husarion_ext_control():
   
   #======    End of OnRobot RG Run    ======#
   # end: URCap Installation Node
+  step_count_b8185ade_1905_4a1b_be5c_14fd00ab9fec = 0.0
+  thread Step_Counter_Thread_21e2ea0f_4b7f_4560_b1ee_feaf412a9a5e():
+    while (True):
+      step_count_b8185ade_1905_4a1b_be5c_14fd00ab9fec = step_count_b8185ade_1905_4a1b_be5c_14fd00ab9fec + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_21e2ea0f_4b7f_4560_b1ee_feaf412a9a5e()
   $ 4 "Thread_1"
   thread Thread_1():
     $ 5 "Script: husarion_rg2_driver.script"
-    modbus_add_signal("10.42.0.49", 255, 16, 3, "joint_out")
-    modbus_add_signal("10.42.0.49", 255, 17, 1, "rg_busy_out")
-    modbus_add_signal("10.42.0.49", 255, 18, 1, "grip_detected_out")
+    modbus_add_signal("10.15.20.4", 255, 16, 3, "joint_out")
+    modbus_add_signal("10.15.20.4", 255, 17, 1, "rg_busy_out")
+    modbus_add_signal("10.15.20.4", 255, 18, 1, "grip_detected_out")
     
-    modbus_add_signal("10.42.0.49", 255, 20, 0, "action_trigger_in")
-    modbus_add_signal("10.42.0.49", 255, 128, 2, "joint_in")
-    modbus_add_signal("10.42.0.49", 255, 129, 2, "force_in")
+    modbus_add_signal("10.15.20.4", 255, 20, 0, "action_trigger_in")
+    modbus_add_signal("10.15.20.4", 255, 128, 2, "joint_in")
+    modbus_add_signal("10.15.20.4", 255, 129, 2, "force_in")
     
     modbus_set_signal_update_frequency("joint_out", 500)
     modbus_set_signal_update_frequency("rg_busy_out", 500)
@@ -1515,7 +1515,7 @@ def husarion_ext_control():
   $ 6 "Thread_2"
   thread Thread_2():
     $ 7 "Script: husarion_rg2_watchdog.script"
-    modbus_add_signal("10.42.0.49", 255, 19, 1, "watchdog_out")
+    modbus_add_signal("10.15.20.4", 255, 19, 1, "watchdog_out")
     modbus_set_signal_update_frequency("joint_out", 500)
     
     state = False
@@ -1532,8 +1532,8 @@ def husarion_ext_control():
     # begin: URCap Program Node
     #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
     #   Type: External Control
-    $ 3 "Control by 10.42.0.1"
-popup("The connection to the remote PC at 10.42.0.1:50002 could not be established. Reason: Connection refused (Connection refused)","Receive program failed", False, True, blocking=True)
+    $ 3 "Control by User Computer (Panther)"
+popup("The connection to the remote PC at 10.15.20.3:50002 could not be established. Reason: connect timed out","Receive program failed", False, True, blocking=True)
 sync()    # end: URCap Program Node
   end
 end

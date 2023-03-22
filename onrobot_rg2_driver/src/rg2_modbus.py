@@ -1,6 +1,6 @@
 from dataclasses import dataclass
-import modbus_tk.defines as cst
 from modbus_tk import modbus_tcp
+import modbus_tk.defines as cst
 from threading import Thread
 
 import rospy
@@ -25,13 +25,13 @@ class Watchdog:
         self._prev_state = False
         self._last_state_change_time = None
 
-        self.watchdog_thread = Thread(target=self._update_watchdog_state, name='watchdog_thread')
-        self.watchdog_thread.start()
+        self._watchdog_thread = Thread(target=self._update_watchdog_state, name='watchdog_thread')
+        self._watchdog_thread.start()
 
         rospy.sleep(self.WATCHDOG_TIMEOUT)
 
     def _update_watchdog_state(self):
-        rate = rospy.Rate(20)
+        rate = rospy.Rate(20.0)
 
         while True:
             state = bool(self._master.execute(1, cst.READ_COILS, ColisConsts.WATCHDOG_OUT, 1)[0])
