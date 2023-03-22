@@ -70,7 +70,7 @@ class Rg2DriverNode:
                 self._rg2_modbus.send_gripp_req(req.width, req.force)
                 grip_detected = self._wait_for_grip_completion(self._service_call_timeout)
 
-                rospy.loginfo(f'[{rospy.get_name()}] Gripper action succes!')
+                rospy.loginfo(f'[{rospy.get_name()}] Gripper action success!')
 
                 return GripperStateResponse(True, grip_detected, None)
 
